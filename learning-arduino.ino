@@ -7,6 +7,9 @@ const int redPin = 8;
 const int greenPin = 10;
 const int bluePin = 9;
 
+const int greenLED = 7;
+const int redLED = 6;
+
 bool flag = true;
 
 const float incrementor = 1.0f;
@@ -25,6 +28,9 @@ void setup() {
 	pinMode(greenButton, INPUT);
 	pinMode(blueButton, INPUT);
 
+	pinMode(greenLED, OUTPUT);
+	pinMode(redLED, OUTPUT);
+
 	pinMode(redPin, OUTPUT);
 	pinMode(greenPin, OUTPUT);
 	pinMode(bluePin, OUTPUT);
@@ -39,6 +45,14 @@ void loop() {
 
 	if(flagState == LOW) {
 		flag = !flag;
+	}
+
+	if(flag) {
+		digitalWrite(greenLED, HIGH);
+		digitalWrite(redLED, LOW);
+	} else {
+		digitalWrite(redLED, HIGH);
+		digitalWrite(greenLED, LOW);
 	}
 
 	if(redState == LOW && flag && red < 255) {
