@@ -1,6 +1,6 @@
 const int trigPin = 12;
 const int echoPin = 13;
-const float speedOfSound = 0.034f;
+const float speedOfSound = 0.0343f;
 
 long duration;
 int distance;
